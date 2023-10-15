@@ -15,7 +15,7 @@ class Game():
     def playGame(self):
         print("---- STARTING A NEW GAME ----")
         # 10 frames
-        for frame in range(1, 12):
+        for frame in range(1, 11):
             print("Frame " + str(frame))
             # 2 throws per frame
             self.throwBall(frame)
