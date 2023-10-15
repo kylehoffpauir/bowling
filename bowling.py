@@ -80,6 +80,7 @@ class Game():
                 totalScore += self.gameScore[x][0] + self.gameScore[x][1]
         return totalScore
     """
+    http://www.fryes4fun.com/Bowling/scoring.htm
     Scoring Rules
     Strike
     
