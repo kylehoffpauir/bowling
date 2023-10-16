@@ -55,7 +55,7 @@ class Game():
             if not self.validateScore(pinsKnocked, throw):
                 print("Invalid input, try again")
                 continue
-            if throw == 2 and self.gameScore[frame][0] + int(pinsKnocked) > 10:
+            if throw == 2 and self.convert(self.gameScore[frame][0]) + self.convert(pinsKnocked) > 10 and pinsKnocked != "/":
                 print("Invalid input, try again")
                 continue
             # if we get a strike, we are done with the frame
@@ -88,10 +88,10 @@ class Game():
                 throw += 1
 
     def validateScore(self, score, throw):
-        # valid inputs are only [X, /, 1-10] IFF / is a / on the second throw
-        # print(str(score in ["X", "/", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]) + " " + str(throw == 2 and score == "/"))
+        # valid inputs are only [X, /, 0-10] IFF / is a / on the second throw
+        # print(str(score in ["X", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]) + " " + str(throw == 2 and score == "/"))
         return True if (throw == 2 and score == "/") \
-            else (score in ["X", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"])
+            else (score in ["X", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"])
 
     def convert(self, score):
         if score == "X" or score == "/":
